@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Labyrinth Controller</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">DTMF Labyrinth Controller</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="what_is_dtmf">Was sind DTMF Signale?</string>
+    <string name="dtmf_info">Dual Tone Multi-Frequency oder DTMF, auf Deutsch auch Mehrfrequenzwahlverfahren (MFV) genannt, wird benutzt um mittels den Tasten eines Telefongeräts Signale, wie zum Beispiel eine Rufnummer, zu übermitteln. Dabei bildet jede Telefontaste eine Tonfrequenz, die wieder aus zwei unterschiedlichen Herzfrequenzen zusammengestellt wird.</string>
+    <string name="dtmf_more_info">Mehr Informationen &#128279;</string>
+    <string name="use">USE</string>
+</resources>
