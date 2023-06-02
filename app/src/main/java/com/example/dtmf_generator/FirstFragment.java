@@ -29,12 +29,6 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
     private static ToneGenerator generator;
 
-    private Step lastStep = Step.UP;
-
-    private enum Step {
-        UP,DOWN,LEFT,RIGHT
-    }
-
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -64,7 +58,6 @@ public class FirstFragment extends Fragment {
                 boolean touched = false;
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     touched = true;
-                    lastStep = Step.UP;
                     freqText.setText("1209Hz x 697Hz");
                 }
                 if(touched) {
@@ -83,7 +76,6 @@ public class FirstFragment extends Fragment {
                 boolean touched = false;
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     touched = true;
-                    lastStep = Step.DOWN;
                     freqText.setText("1336Hz x 697Hz");
                 }
                 if(touched) {
@@ -102,7 +94,6 @@ public class FirstFragment extends Fragment {
                 boolean touched = false;
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     touched = true;
-                    lastStep = Step.RIGHT;
                     freqText.setText("1633Hz x 697Hz");
                 }
                 if(touched) {
@@ -122,7 +113,6 @@ public class FirstFragment extends Fragment {
                 boolean touched = false;
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     touched = true;
-                    lastStep = Step.LEFT;
                     freqText.setText("1477Hz x 697Hz");
                 }
                 if(touched) {
@@ -143,25 +133,8 @@ public class FirstFragment extends Fragment {
                     touched = true;
                 }
                 if(touched) {
-                    switch(lastStep) {
-                        case UP:
-                            generator.startTone(ToneGenerator.TONE_DTMF_7);
-                            freqText.setText("1209Hz x 852Hz");
-                            break;
-                        case DOWN:
-                            generator.startTone(ToneGenerator.TONE_DTMF_8);
-                            freqText.setText("1336Hz x 852Hz");
-                            break;
-                        case LEFT:
-                            generator.startTone(ToneGenerator.TONE_DTMF_9);
-                            freqText.setText("1477Hz x 852Hz");
-                            break;
-                        case RIGHT:
-                            generator.startTone(ToneGenerator.TONE_DTMF_C);
-                            freqText.setText("1633Hz x 852Hz");
-                            break;
-                        default:
-                    }
+                    generator.startTone(ToneGenerator.TONE_DTMF_7);
+                    freqText.setText("1209Hz x 852Hz");
                 }
                 if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     touched = false;
